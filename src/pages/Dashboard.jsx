@@ -28,11 +28,18 @@ export default function Dashboard() {
         <div className="vessel-banner">
           <div>
             <div className="vessel-name">R/V Dawn</div>
-            <div className="vessel-sub">47-ft Sailing Research Vessel · Eastern Caribbean</div>
+            <div className="vessel-sub">39-ft Sailing Research Vessel · MMSI 368308940</div>
           </div>
           <div className="vessel-coords">
             <span>Current Position (AIS)</span>
-            17.07°N, 61.80°W
+            <a
+              href="https://www.marinetraffic.com/en/ais/details/ships/mmsi:368308940"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: 13 }}
+            >
+              Track Live ↗
+            </a>
           </div>
         </div>
 
@@ -55,12 +62,12 @@ export default function Dashboard() {
               <tbody>
                 {[
                   ['Vessel',       'R/V Dawn (SSI)'],
-                  ['Current leg',  'Eastern Caribbean — Jan 2025'],
+                  ['MMSI',         '368308940'],
+                  ['Mission dates','Mid-June – early July 2026 (3 weeks)'],
+                  ['Route',        'St. Martin → BVI → USVI → Spanish VI → Puerto Rico → Dominican Republic'],
                   ['PI aboard',    'Dr. Roger Tipton'],
-                  ['Objective',    'Microplastics density survey'],
-                  ['Next port',    'Gustavia, St. Barts'],
+                  ['Objective',    'PFAS and microplastics survey — Leeward Islands'],
                   ['Ocean region', 'Eastern Caribbean Sea'],
-                  ['Dataset',      '18 stations complete'],
                 ].map(([k, v]) => (
                   <tr key={k}>
                     <td style={{ color: 'var(--text3)', width: 130, fontFamily: 'var(--font-mono)', fontSize: 11 }}>{k}</td>
