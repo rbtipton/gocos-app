@@ -33,7 +33,7 @@ export default function Dashboard() {
           <div className="vessel-coords">
             <span>Current Position (AIS)</span>
             <a
-              href="https://www.marinetraffic.com/en/ais/details/ships/mmsi:368308940"
+              href="https://www.vesseltracker.com/en/vessels/368308940.html"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: 13 }}
