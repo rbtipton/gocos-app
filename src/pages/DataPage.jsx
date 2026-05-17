@@ -45,6 +45,14 @@ function csvEscape(value) {
   return stringValue
 }
 
+function buildQuery(query, dataset, filterReg) {
+  if (!filterReg) return query
+  if (dataset === 'pfas_ocean') {
+    return query.eq('region', filterReg)
+  }
+  return query.ilike('location', filterReg)
+}
+
 export default function DataPage() {
   const [dataset, setDataset] = useState('pfas_ocean')
   const [rows, setRows] = useState([])
@@ -90,14 +98,15 @@ export default function DataPage() {
       setError(null)
 
       try {
+        const orderField = sortBy === 'location' ? locationField : sortBy
         let query = supabase
           .from(dataset)
           .select('*', { count: 'exact' })
-          .order(sortBy, { ascending: sortDir === 'asc' })
+          .order(orderField, { ascending: sortDir === 'asc' })
           .range((page - 1) * pageSize, page * pageSize - 1)
 
         if (locationFilter) {
-          query = query.eq(locationField, locationFilter)
+          query = buildQuery(query, dataset, locationFilter)
         }
         if (typeFilter) {
           query = query.eq('type', typeFilter)
@@ -134,13 +143,14 @@ export default function DataPage() {
     setError(null)
 
     try {
+      const orderField = sortBy === 'location' ? locationField : sortBy
       let query = supabase
         .from(dataset)
         .select('*')
-        .order(sortBy, { ascending: sortDir === 'asc' })
+        .order(orderField, { ascending: sortDir === 'asc' })
 
       if (locationFilter) {
-        query = query.eq(locationField, locationFilter)
+        query = buildQuery(query, dataset, locationFilter)
       }
       if (typeFilter) {
         query = query.eq('type', typeFilter)
@@ -159,7 +169,7 @@ export default function DataPage() {
       if (downloadError) throw downloadError
 
       const outputRows = allRows ?? []
-      const headers = ['region_or_location', 'year', 'compound', 'concentration_ng_l', 'type', 'reference']
+      const headers = [locationField, 'year', 'compound', 'concentration_ng_l', 'type', 'reference']
       const csv = [headers.join(',')]
         .concat(
           outputRows.map(row => csvEscape(row[locationField]) + ',' +
@@ -372,7 +382,7 @@ export default function DataPage() {
                   </tr>
                 ) : rows.map((row, index) => (
                   <tr key={`${row.id ?? row.reference ?? index}-${index}`}>
-                    <td>{row[locationField] ?? '-'}</td>
+                    <td>{(isOcean ? row.region : row.location) ?? '-'}</td>
                     <td>{row.year ?? '-'}</td>
                     <td>{row.compound ?? '-'}</td>
                     <td>{row.concentration_ng_l ?? '-'}</td>
