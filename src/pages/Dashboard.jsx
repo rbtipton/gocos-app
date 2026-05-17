@@ -43,20 +43,68 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
-          <div style={{ backgroundColor: '#001a33', padding: '12px 16px', borderBottom: '1px solid #004080' }}>
-            <div style={{ fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text2)' }}>
-              Live Position — MMSI 368308940
+        <div className="card" style={{ backgroundColor: '#001a33', color: 'white', padding: '24px', border: '1px solid #003366' }}>
+          <div style={{ marginBottom: 18 }}>
+            <div style={{ fontSize: 14, fontFamily: 'var(--font-mono)', color: '#8ab7de', marginBottom: 4 }}>
+              Live Vessel Tracking
             </div>
+            <div style={{ fontSize: 20, fontWeight: 600 }}>R/V Dawn Mission Overview</div>
           </div>
-          <div style={{ position: 'relative', width: '100%' }}>
-            <iframe
-              src="https://www.vesselfinder.com/embed/?mmsi=368308940&zoom=9&colorscheme=0&names=true&speed=true&course=true"
-              width="100%"
-              height="380px"
-              frameBorder="0"
-              style={{ display: 'block', backgroundColor: '#f5f5f5' }}
-            />
+
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, marginBottom: 24 }}>
+            <a
+              href="https://sustainableseasinstitute.org/track-r-v-dawn/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: '#004b80',
+                color: 'white',
+                padding: '12px 16px',
+                borderRadius: 8,
+                textDecoration: 'none',
+                fontWeight: 600,
+                minWidth: 200,
+                textAlign: 'center',
+              }}
+            >
+              Live Map — SSI Website
+            </a>
+            <a
+              href="https://www.vesselfinder.com/?mmsi=368308940"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                backgroundColor: '#002b54',
+                color: 'white',
+                padding: '12px 16px',
+                borderRadius: 8,
+                textDecoration: 'none',
+                fontWeight: 600,
+                minWidth: 200,
+                textAlign: 'center',
+              }}
+            >
+              VesselFinder
+            </a>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 16 }}>
+            <div style={{ backgroundColor: '#002848', borderRadius: 12, padding: '16px' }}>
+              <div style={{ fontSize: 12, color: '#8ab7de', marginBottom: 6 }}>Current mission</div>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>St. Martin → Dominican Republic</div>
+            </div>
+            <div style={{ backgroundColor: '#002848', borderRadius: 12, padding: '16px' }}>
+              <div style={{ fontSize: 12, color: '#8ab7de', marginBottom: 6 }}>Mission dates</div>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>Mid-June – July 2026</div>
+            </div>
+            <div style={{ backgroundColor: '#002848', borderRadius: 12, padding: '16px' }}>
+              <div style={{ fontSize: 12, color: '#8ab7de', marginBottom: 6 }}>Duration</div>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>3 weeks</div>
+            </div>
+            <div style={{ backgroundColor: '#002848', borderRadius: 12, padding: '16px' }}>
+              <div style={{ fontSize: 12, color: '#8ab7de', marginBottom: 6 }}>Ocean region</div>
+              <div style={{ fontSize: 16, fontWeight: 600 }}>Eastern Caribbean Sea</div>
+            </div>
           </div>
         </div>
 
