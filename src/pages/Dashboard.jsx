@@ -33,13 +33,30 @@ export default function Dashboard() {
           <div className="vessel-coords">
             <span>Current Position (AIS)</span>
             <a
-              href="https://www.vesseltracker.com/en/vessels/368308940.html"
+              href="https://www.vesselfinder.com/?mmsi=368308940"
               target="_blank"
               rel="noopener noreferrer"
               style={{ color: 'var(--accent)', textDecoration: 'none', fontFamily: 'var(--font-mono)', fontSize: 13 }}
             >
               Track Live ↗
             </a>
+          </div>
+        </div>
+
+        <div className="card" style={{ padding: 0, overflow: 'hidden' }}>
+          <div style={{ backgroundColor: '#001a33', padding: '12px 16px', borderBottom: '1px solid #004080' }}>
+            <div style={{ fontSize: 13, fontFamily: 'var(--font-mono)', color: 'var(--text2)' }}>
+              Live Position — MMSI 368308940
+            </div>
+          </div>
+          <div style={{ position: 'relative', width: '100%' }}>
+            <iframe
+              src="https://www.vesselfinder.com/embed/?mmsi=368308940&zoom=9&colorscheme=0&names=true&speed=true&course=true"
+              width="100%"
+              height="380px"
+              frameBorder="0"
+              style={{ display: 'block', backgroundColor: '#f5f5f5' }}
+            />
           </div>
         </div>
 
