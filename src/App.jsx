@@ -5,6 +5,7 @@ import MapPage from './pages/MapPage'
 import Portfolio from './pages/Portfolio'
 import Education from './pages/Education'
 import CitizenScience from './pages/CitizenScience'
+import DataPage from './pages/DataPage'
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/map" element={<MapPage />} />
           <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/data" element={<DataPage />} />
           <Route path="/education" element={<Education />} />
           <Route path="/submit" element={<CitizenScience />} />
         </Routes>
