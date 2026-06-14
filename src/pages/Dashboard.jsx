@@ -1,13 +1,18 @@
 import { stations } from '../data/stations'
 
 const metrics = [
-  { label: 'Stations Sampled', value: '18',  unit: 'Caribbean sites', color: '#00B4D8' },
-  { label: 'PFAS Records',     value: '6,040', unit: 'open dataset',    color: '#A29BFE' },
-  { label: 'Days at Sea',      value: '127', unit: 'cumulative',       color: '#55EFC4' },
-  { label: 'Publications',     value: '2',   unit: 'peer-reviewed',    color: '#FFA07A' },
+  { label: 'Stations Sampled', value: '22',  unit: 'Caribbean sites', color: '#00B4D8' },
+  { label: 'PFAS Records',     value: '6,040', unit: 'open dataset',  color: '#A29BFE' },
+  { label: 'Days at Sea',      value: '127', unit: 'cumulative',      color: '#55EFC4' },
+  { label: 'Publications',     value: '2',   unit: 'peer-reviewed',   color: '#FFA07A' },
 ]
 
 const recentStations = [...stations].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 6)
+
+function fmt(val) {
+  if (val === null || val === undefined) return '—'
+  return typeof val === 'number' ? val.toFixed(1) : val
+}
 
 export default function Dashboard() {
   return (
@@ -93,6 +98,7 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* Metrics */}
         <div className="grid-4">
           {metrics.map(m => (
             <div className="card" key={m.label} style={{ borderTop: `3px solid ${m.color}` }}>
@@ -143,6 +149,7 @@ export default function Dashboard() {
           </div>
         </div>
 
+        {/* Station log */}
         <div className="card">
           <div className="section-title">Station Log</div>
           <div style={{ overflowX: 'auto' }}>
@@ -159,9 +166,13 @@ export default function Dashboard() {
                     <td><span className="station-id">{s.id}</span></td>
                     <td style={{ fontWeight: 500 }}>{s.name}</td>
                     <td>{s.date}</td>
-                    <td style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>{s.pfas.toFixed(1)}</td>
-                    <td style={{ fontFamily: 'var(--font-mono)', fontSize: 13 }}>{s.mp.toFixed(1)}</td>
-                    <td><span className={`badge badge-${s.status}`}><span className="badge-dot" />{s.status}</span></td>
+                    <td style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: s.pfas === null ? 'var(--text3)' : 'inherit' }}>{fmt(s.pfas)}</td>
+                    <td style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: s.mp === null ? 'var(--text3)' : 'inherit' }}>{fmt(s.mp)}</td>
+                    <td>
+                      <span className={`badge badge-${s.status === 'pending' ? 'planning' : s.status}`}>
+                        <span className="badge-dot" />{s.status}
+                      </span>
+                    </td>
                   </tr>
                 ))}
               </tbody>
