@@ -1,0 +1,26 @@
+# GOCOS App
+
+Global Ocean Contamination Open-Source Ecosystem — mobile/web application for
+real-time marine PFAS and microplastics contamination monitoring, citizen
+science observation reporting, and vessel tracking across the Caribbean,
+Arctic, Baltic, and South Pacific.
+
+Live app: https://gocos-app.vercel.app
+
+## About
+
+Developed by the Sustainable Seas Institute and the University of North
+Carolina at Charlotte. Built on React, deployable to iOS, Android, and web.
+
+## Data
+
+Underlying scientific datasets are published openly on Zenodo, e.g.
+https://doi.org/10.5281/zenodo.20262315
+
+## License
+
+MIT — see [LICENSE](./LICENSE)
+
+## Status
+
+Early-stage prototype, contributions and feedback welcome.
