@@ -19,7 +19,7 @@ export default function Portfolio() {
       <div className="page-hero">
         <div className="page">
           <div className="page-label">Research Portfolio</div>
-          <h1 className="page-title">18-Project SSI Research Program</h1>
+          <h1 className="page-title">{projects.length}-Project SSI Research Program</h1>
           <p className="page-subtitle">
             Spanning PFAS, microplastics, biodiversity, technology, and ocean education across the Caribbean and beyond.
           </p>
