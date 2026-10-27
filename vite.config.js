@@ -43,7 +43,18 @@ export default defineConfig({
               cacheName: 'gocos-data',
               networkTimeoutSeconds: 6,
               expiration: { maxEntries: 200, maxAgeSeconds: 60 * 60 * 24 * 30 },
-              cacheableResponse: { statuses: [0, 200] },
+              plugins: [
+                {
+                  // Supabase answers paged queries with 206 Partial Content,
+                  // which the browser cache refuses. Store them as 200.
+                  cacheWillUpdate: async ({ response }) => {
+                    if (!response || (response.status !== 200 && response.status !== 206)) return null
+                    if (response.status === 200) return response
+                    const body = await response.clone().blob()
+                    return new Response(body, { status: 200, statusText: 'OK', headers: response.headers })
+                  },
+                },
+              ],
             },
           },
           {
