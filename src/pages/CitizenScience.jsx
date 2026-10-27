@@ -84,7 +84,7 @@ export default function CitizenScience() {
       </div>
 
       <div className="page">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24, alignItems: 'start' }}>
+        <div className="submit-layout" style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: 24, alignItems: 'start' }}>
           <form className="cs-form-card" onSubmit={handleSubmit}>
 
             <div className="form-section-title">1. Location</div>
