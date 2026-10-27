@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav'
+import AppBanners from './components/AppBanners'
 import Dashboard from './pages/Dashboard'
 import MapPage from './pages/MapPage'
 import Portfolio from './pages/Portfolio'
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/submit" element={<CitizenScience />} />
         </Routes>
       </main>
+      <AppBanners />
     </Router>
   )
 }
