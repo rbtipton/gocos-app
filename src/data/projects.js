@@ -78,31 +78,13 @@ export const projects = [
     link: 'https://sustainableseasinstitute.org/data-platform',
   },
   {
-    id: '14', theme: 'monitoring', status: 'active', progress: 45, year: 2026,
-    title: 'Caribbean Coral Health Monitoring',
-    desc: 'Monitoring coral reef condition and stress indicators during SSI voyages to assess ecosystem responses to pollution and warming.',
-    link: 'https://sustainableseasinstitute.org/coral-health-monitoring',
-  },
-  {
-    id: '15', theme: 'shipping', status: 'planning', progress: 20, year: 2026,
-    title: 'AIS Shipping Influence Study',
-    desc: 'Investigating the relationship between commercial shipping lanes, AIS density, and PFAS/microplastic concentrations in coastal waters.',
-    link: 'https://sustainableseasinstitute.org/ais-shipping-study',
-  },
-  {
     id: '16', theme: 'science', status: 'complete', progress: 100, year: 2025,
     title: '2025 Seasonal Caribbean Water Quality Report',
     desc: 'Final report summarizing SSI 2025 field campaigns in the Caribbean, including PFAS, microplastics, and biological condition assessments.',
     link: 'https://sustainableseasinstitute.org/2025-water-quality-report',
   },
   {
-    id: '17', theme: 'climate', status: 'active', progress: 35, year: 2026,
-    title: 'Ocean Climate Resilience Study',
-    desc: 'Research linking contamination stressors with climate-driven ocean changes in the Eastern Caribbean region.',
-    link: 'https://sustainableseasinstitute.org/climate-resilience-study',
-  },
-  {
-    id: '18', theme: 'partnership', status: 'planning', progress: 30, year: 2026,
+    id: '18', theme: 'partnership', status: 'planning', progress: 10, year: 2026,
     title: 'Regional Island Science Partnerships',
     desc: 'Developing collaborative research partnerships with island universities, NGOs, and government agencies across the Lesser Antilles.',
     link: 'https://sustainableseasinstitute.org/island-partnerships',
@@ -122,9 +104,6 @@ export const themes = {
   education: { label: 'Education', color: '#FFA07A' },
   community: { label: 'Community', color: '#55EFC4' },
   data: { label: 'Data Infrastructure', color: '#4cd137' },
-  monitoring: { label: 'Monitoring', color: '#00cec9' },
-  shipping: { label: 'Shipping', color: '#fdcb6e' },
   science: { label: 'Science', color: '#e17055' },
-  climate: { label: 'Climate', color: '#6c5ce7' },
   partnership: { label: 'Partnerships', color: '#d63031' },
 }
