@@ -21,16 +21,8 @@ export const stations = [
   { id: 'CST-013', name: 'USVI — St. Croix',                  lat: 17.73, lng: -64.74, pfas: null, mp: null, status: 'pending', date: '2024-11-07', notes: 'Data collection complete. Analysis pending.' },
 
   // ── Puerto Rico ───────────────────────────────────────────────────────
-  { id: 'CST-021', name: 'Puerto Rico — Culebra',             lat: 18.30, lng: -65.30, pfas: null, mp: null, status: 'pending', date: '2026-06-24', notes: '2026 mission. Sample collected. Analysis pending.' },
-  { id: 'CST-022', name: 'Puerto Rico — Vieques',             lat: 18.15, lng: -65.44, pfas: null, mp: null, status: 'pending', date: '2026-06-25', notes: '2026 mission. Sample collected. Analysis pending.' },
   { id: 'CST-014', name: 'Puerto Rico — San Juan',            lat: 18.47, lng: -66.12, pfas: null, mp: null, status: 'pending', date: '2024-11-10', notes: 'Data collection complete. Analysis pending.' },
-  { id: 'CST-023', name: 'Puerto Rico — Salinas',             lat: 17.97, lng: -66.30, pfas: null, mp: null, status: 'pending', date: '2026-06-27', notes: '2026 mission. Sample collected. Analysis pending.' },
   { id: 'CST-015', name: 'Puerto Rico — Ponce',               lat: 17.99, lng: -66.61, pfas: null, mp: null, status: 'pending', date: '2024-11-12', notes: 'Data collection complete. Analysis pending.' },
-  { id: 'CST-024', name: 'Puerto Rico — Boqueron',            lat: 17.98, lng: -67.19, pfas: null, mp: null, status: 'pending', date: '2026-06-28', notes: '2026 mission. Sample collected. Analysis pending.' },
-
-  // ── Dominican Republic ────────────────────────────────────────────────
-  { id: 'CST-025', name: 'Dominican Republic — Samaná',       lat: 19.21, lng: -69.33, pfas: null, mp: null, status: 'pending', date: '2026-07-02', notes: '2026 mission. Marina Puerto Bahia. Sample collected. Analysis pending.' },
-  { id: 'CST-026', name: 'Dominican Republic — Puerto Plata', lat: 19.79, lng: -70.69, pfas: null, mp: null, status: 'pending', date: '2026-07-05', notes: '2026 mission. Ocean World Marina. Sample collected. Analysis pending.' },
 
   // ── Bahamas ───────────────────────────────────────────────────────────
   { id: 'CST-016', name: 'Bahamas — Nassau',                  lat: 25.08, lng: -77.34, pfas: null, mp: null, status: 'pending', date: '2024-12-01', notes: 'Data collection complete. Analysis pending.' },
