@@ -1,7 +1,7 @@
 import { stations } from '../data/stations'
 
 const metrics = [
-  { label: 'Stations Sampled', value: '22',  unit: 'Caribbean sites', color: '#00B4D8' },
+  { label: 'Stations Sampled', value: String(stations.length),  unit: 'Caribbean sites', color: '#00B4D8' },
   { label: 'PFAS Records',     value: '6,040', unit: 'open dataset',  color: '#A29BFE' },
   { label: 'Days at Sea',      value: '127', unit: 'cumulative',      color: '#55EFC4' },
   { label: 'Publications',     value: '2',   unit: 'peer-reviewed',   color: '#FFA07A' },
@@ -20,9 +20,9 @@ export default function Dashboard() {
       <div className="page-hero">
         <div className="page">
           <div className="page-label">Mission Control</div>
-          <h1 className="page-title">R/V Dawn — Active Operations</h1>
+          <h1 className="page-title">R/V Dawn Operations</h1>
           <p className="page-subtitle">
-            Sustainable Seas Institute research vessel. Eastern Caribbean PFAS and microplastics survey program.
+            Sustainable Seas Institute research vessel. Ashore in the British Virgin Islands for hurricane season refit. Next leg: BVI to the Dominican Republic, December 16 to 30, 2026.
           </p>
         </div>
       </div>
@@ -85,9 +85,9 @@ export default function Dashboard() {
           </div>
           <div style={{ background: 'var(--deep)', padding: '20px 24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 20 }}>
             {[
-              { label: 'Current mission', value: 'St. Martin → Dominican Republic' },
-              { label: 'Mission dates',   value: 'Mid-June – July 2026' },
-              { label: 'Duration',        value: '3 weeks' },
+              { label: 'Vessel status',   value: 'Ashore for refit, Virgin Gorda, BVI' },
+              { label: 'Next mission',    value: 'BVI → Dominican Republic' },
+              { label: 'Mission dates',   value: 'December 16 to 30, 2026' },
               { label: 'Ocean region',    value: 'Eastern Caribbean Sea' },
             ].map(item => (
               <div key={item.label}>
@@ -110,16 +110,17 @@ export default function Dashboard() {
 
         <div className="grid-2" style={{ marginBottom: 24 }}>
           <div className="card">
-            <div className="section-title">Current Mission</div>
+            <div className="section-title">Next Mission</div>
             <table className="recent-table">
               <tbody>
                 {[
                   ['Vessel',        'R/V Dawn (SSI)'],
                   ['MMSI',          '368308940'],
-                  ['Mission dates', 'Mid-June – early July 2026 (3 weeks)'],
-                  ['Route',         'St. Martin → BVI → USVI → Spanish VI → Puerto Rico → Dominican Republic'],
-                  ['PI aboard',     'Dr. Roger Tipton'],
-                  ['Objective',     'PFAS and microplastics survey — Leeward Islands'],
+                  ['Status',        'Ashore in Virgin Gorda, BVI, for hurricane season refit'],
+                  ['Mission dates', 'December 16 to 30, 2026'],
+                  ['Route',         'British Virgin Islands → Dominican Republic'],
+                  ['PI',            'Dr. Roger Tipton'],
+                  ['Objective',     'PFAS and microplastics sampling at islands along the way'],
                   ['Ocean region',  'Eastern Caribbean Sea'],
                 ].map(([k, v]) => (
                   <tr key={k}>
@@ -139,6 +140,7 @@ export default function Dashboard() {
               { label: 'NSF PESOSE Proposal',      val: 'Submitted',                 badge: 'active' },
               { label: 'NSF Award 2444939',        val: 'Active — Arctic sampling',  badge: 'active' },
               { label: 'South Pacific Expedition', val: 'Active — French Polynesia', badge: 'active' },
+              { label: 'Baltic Sea Microplastics', val: 'Nov 14 to Dec 3, 2026',    badge: 'planning' },
               { label: 'GOCOS Platform',           val: 'Phase 1 live',              badge: 'active' },
             ].map(r => (
               <div key={r.label} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '10px 0', borderBottom: '1px solid var(--surface2)' }}>

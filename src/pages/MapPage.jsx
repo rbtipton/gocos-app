@@ -37,8 +37,15 @@ export default function MapPage() {
           scrollWheelZoom={true}
         >
           <TileLayer
-            url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
-            attribution='&copy; <a href="https://carto.com">CARTO</a>'
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Base/MapServer/tile/{z}/{y}/{x}"
+            attribution='Tiles &copy; <a href="https://www.esri.com">Esri</a> | Sources: GEBCO, NOAA, CHS, OSU, UNH, CSUMB, National Geographic, DeLorme, NAVTEQ, and Esri'
+            maxNativeZoom={10}
+            maxZoom={16}
+          />
+          <TileLayer
+            url="https://server.arcgisonline.com/ArcGIS/rest/services/Ocean/World_Ocean_Reference/MapServer/tile/{z}/{y}/{x}"
+            maxNativeZoom={10}
+            maxZoom={16}
           />
           {stations.map(s => (
             <CircleMarker
