@@ -63,10 +63,12 @@ export default function Nav() {
         ))}
       </div>
 
-      <div className="nav-live">
-        <div className="live-dot" />
-        R/V Dawn
-      </div>
+      <NavLink to="/field" className={({ isActive }) => `nav-field${isActive ? ' active' : ''}`}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M9 3h6l1 4H8z"/><rect x="5" y="7" width="14" height="14" rx="2"/><path d="M9 12h6M9 16h4"/>
+        </svg>
+        <span>Field log</span>
+      </NavLink>
     </nav>
   )
 }

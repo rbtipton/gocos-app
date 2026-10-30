@@ -1,0 +1,8 @@
+{
+  "appId": "org.sustainableseasinstitute.gocos",
+  "appName": "GOCOS",
+  "webDir": "dist",
+  "backgroundColor": "#051B2C",
+  "android": { "backgroundColor": "#051B2C" },
+  "ios": { "backgroundColor": "#051B2C", "contentInset": "never" }
+}

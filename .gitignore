@@ -4,3 +4,8 @@ dist
 .env.local
 .DS_Store
 *.log
+
+# Native projects are generated on the build computer with: npm run native:setup
+/android/
+/ios/
+/assets/

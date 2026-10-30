@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Capacitor } from '@capacitor/core'
 
 const DISMISS_KEY = 'gocos-install-dismissed'
 
 function isStandalone() {
+  if (Capacitor.isNativePlatform()) return true
   return window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true
 }
 
